@@ -14,7 +14,7 @@ getCurrentYear = do
     return year
 
 main :: IO ()
-main = scotty 3000 $ do
+main = scotty 3001 $ do
     get "/" $ do
         year <- liftIO getCurrentYear
         let answer = if year == 2015 then "Yes! Open the champagne!" else "No, not yet."
