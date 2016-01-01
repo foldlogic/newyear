@@ -17,15 +17,15 @@ main :: IO ()
 main = scotty 3001 $ do
     get "/" $ do
         year <- liftIO getCurrentYear
-        let answer = if year == 2015 then "Yes! Open the champagne!" else "No, not yet."
+        let answer = if year == 2016 then "Yes! Open the champagne!" else "No, not yet."
         html $ renderHtml $
             H.html $ do
                 H.head $ do
-                    H.title "Is it 2015 yet?"
+                    H.title "Is it 2016 yet?"
                     H.link H.! href "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" H.! rel "stylesheet"
                 H.body $ do
                     H.div H.! class_ "container" $ do
                         H.div H.! class_ "jumbotron" $ do
-                            H.h1 "Is it 2015 yet?"
+                            H.h1 "Is it 2016 yet?"
                             H.p answer
 
